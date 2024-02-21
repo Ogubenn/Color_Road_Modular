@@ -9,6 +9,9 @@ TagManager:
   - 5Diamond
   - Diamond
   - Star
+  - Brick
+  - Money
+  - MoneyNumber
   layers:
   - Default
   - TransparentFX
