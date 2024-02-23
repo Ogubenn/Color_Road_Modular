@@ -12,6 +12,7 @@ TagManager:
   - Brick
   - Money
   - MoneyNumber
+  - RoadSpawn
   layers:
   - Default
   - TransparentFX

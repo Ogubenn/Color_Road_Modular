@@ -123,6 +123,51 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &206491207
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 206491208}
+  - component: {fileID: 206491209}
+  m_Layer: 0
+  m_Name: RoadSpawnerCollider
+  m_TagString: RoadSpawn
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &206491208
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206491207}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 208061920}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &206491209
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206491207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.042146444
+  m_Center: {x: 0, y: 0, z: 0.09784067}
 --- !u!1 &208061914
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +223,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 112
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!135 &208061917
 SphereCollider:
@@ -254,7 +299,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.5, z: 1.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 206491208}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -629,6 +675,7 @@ MonoBehaviour:
   starCoin: 0
   diamondCoinHexa: 0
   diamondCoin: 0
+  GameStartGroundSpawn: 10
 --- !u!4 &1278242658
 Transform:
   m_ObjectHideFlags: 0
@@ -690,10 +737,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32331caff8f76cc4497334489e8b30b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundPrefab: {fileID: 4450469379949493063, guid: 4574bdd1bd4704740898bb1671083ce1, type: 3}
-  initialGroundCount: 20
-  recycleThreshold: 5
-  groundLength: 10
+  Prefabs:
+  - {fileID: 4450469379949493063, guid: 4574bdd1bd4704740898bb1671083ce1, type: 3}
+  - {fileID: 761010205958505308, guid: e9bd6e94c9fe7fc4988ab1ac77c9a30e, type: 3}
+  - {fileID: 4450469379949493063, guid: 5b5e7496a47934247889fe3ad0f33b22, type: 3}
+  - {fileID: 4450469379949493063, guid: 8c76f4c9498ddc04b8ef9de4f5f67a10, type: 3}
+  - {fileID: 761010205958505308, guid: ffc36d3de8b74274d81dc71360328e67, type: 3}
+  - {fileID: 761010205958505308, guid: 6ffa0c627a780714a8873cc641b11026, type: 3}
+  BackArea: 30
+  PrefabsOnScreen: 8
+  LastPrefab: 0
+  SpawnPrefab: 0
+  PrefabLength: 10
 --- !u!1 &1756702605
 GameObject:
   m_ObjectHideFlags: 0
@@ -743,7 +798,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1794497898
 Transform:
   m_ObjectHideFlags: 0
@@ -751,7 +806,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794497897}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -841,7 +896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1892129455
 Transform:
   m_ObjectHideFlags: 0
@@ -849,7 +904,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892129454}
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -936,24 +991,9 @@ MonoBehaviour:
   isDebug: 0
   shouldDestroyOnLoad: 1
   pools:
-  - tag: DiamondHexa
-    prefab: {fileID: 9148874299955657063, guid: 90797f0e7f1440143bd8344a7854b388, type: 3}
-    amount: 100
-    shouldExpandPool: 0
-    extensionLimit: 0
-  - tag: Diamond
-    prefab: {fileID: 3627194783889857332, guid: d1fa0d4f42051b048b7257cbc7b94018, type: 3}
-    amount: 100
-    shouldExpandPool: 0
-    extensionLimit: 0
-  - tag: Star
-    prefab: {fileID: 5120183531670495959, guid: 8dde8a980908a36449dd9635d4b9bb6b, type: 3}
-    amount: 100
-    shouldExpandPool: 0
-    extensionLimit: 0
-  - tag: Heart
-    prefab: {fileID: 5770986526537492664, guid: d25823f5cb4646c4e819ae3bb9f854aa, type: 3}
-    amount: 100
+  - tag: Ground
+    prefab: {fileID: 4450469379949493063, guid: 4574bdd1bd4704740898bb1671083ce1, type: 3}
+    amount: 10
     shouldExpandPool: 0
     extensionLimit: 0
 --- !u!4 &2088880693140680549

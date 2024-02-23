@@ -27,7 +27,10 @@ public class GameManager : MonoBehaviour
     public int starCoin;
     public int diamondCoinHexa;
     public int diamondCoin;
-    
+
+    [Header("Game Start")]
+    public int GameStartGroundSpawn;
+
     private void Awake()
     {
         if (_instance == null)

@@ -1,52 +1,89 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundMaker : MonoBehaviour
 {
-    [SerializeField] GameObject groundPrefab;
-    public int initialGroundCount = 20;
-    public int recycleThreshold = 5; // Yeniden kullanýlabilir zemin sayýsý
-    public float groundLength = 10f; // Zemin uzunluðu
 
-    private List<GameObject> groundList = new List<GameObject>();
-    private Transform playerTransform;
-    private Vector3 nextGroundPosition;
+	public GameObject[] Prefabs; // Farkli ground varyasyonlarÄ±
+	private Transform Player;
 
-    private void Start()
-    {
-        playerTransform = GameObject.FindGameObjectWithTag("Player").transform; // Player'ý bul
-        nextGroundPosition = Vector3.zero;
+	private List<GameObject> ActivePrefabs; //Ground List
 
-        for (int i = 0; i < initialGroundCount; i++)
-        {
-            SpawnGround();
-        }
-    }
 
-    private void Update()
-    {
-        RecycleGround();
-    }
+	public float BackArea = 200.0f; //Tile oyuncunun gerisinde kac birim oldugunu belirtir.alan.Alan geÃ§ilince tile silinir ve yeni tile Ã¼rer.
+	public int PrefabsOnScreen = 4; //Ekrandaki max ground
+	public int LastPrefab = 0; //Son uretilen yol parcasinin prefabs dizisindeki index deÃ°erini tutar.
+	public float SpawnPrefab = -100.0f; //Groundun Ã¼retileceÄŸi koordinat
+	public float PrefabLength = 99.0f; //Ground Uzunlugu
 
-    private void SpawnGround()
-    {
-        GameObject newGround = Instantiate(groundPrefab, nextGroundPosition, Quaternion.identity);
-        nextGroundPosition += Vector3.forward * groundLength;
-        groundList.Add(newGround);
-    }
 
-    private void RecycleGround()
-    {
-        if (playerTransform.position.z > recycleThreshold * groundLength) // Player tetikleyiciyi geçti mi?
-        {
-            GameObject oldGround = groundList[0]; // En eski zemin
-            groundList.RemoveAt(0); // Listeden kaldýr
+	private void Start()
+	{
+		ActivePrefabs = new List<GameObject>();
+		Player = GameObject.FindGameObjectWithTag("Player").transform;
 
-            Vector3 newPos = nextGroundPosition + Vector3.forward * groundLength;
-            oldGround.transform.position = newPos; // Yeniden kullanmak üzere pozisyonu güncelle
-            nextGroundPosition += Vector3.forward * groundLength;
-            groundList.Add(oldGround); // Listeye ekle
-        }
-    }
+		for (int i = 0; i < PrefabsOnScreen; i++)
+		{
+			if (i < 4)
+				Spawn(0);
+			else
+				Spawn();
+		}
+	}
+
+
+	private void Update()
+	{
+		if (Player.position.z - BackArea > (SpawnPrefab - PrefabsOnScreen * PrefabLength))
+		{
+			Spawn();
+			DeletePrefab();
+		}
+	}
+
+	#region Spawn Methot
+	private void Spawn(int prefabIndex = -1)
+	{
+		GameObject myPrefab;
+		if (prefabIndex == -1)
+
+			myPrefab = Instantiate(Prefabs[RandomPrefabs()] as GameObject);
+		else
+			myPrefab = Instantiate(Prefabs[prefabIndex] as GameObject);
+
+		myPrefab.transform.SetParent(transform);
+		myPrefab.transform.position = Vector3.forward * SpawnPrefab;
+		SpawnPrefab += PrefabLength;
+		ActivePrefabs.Add(myPrefab);
+	}
+
+	#endregion
+
+
+	#region Delete Methot
+	private void DeletePrefab()
+	{
+		Destroy(ActivePrefabs[0]);
+		ActivePrefabs.RemoveAt(0);
+	}
+
+	#endregion
+
+	#region Random Methot
+	private int RandomPrefabs()
+	{
+		if (Prefabs.Length <= 1)
+			return 0;
+		int randomIndex = LastPrefab;
+		while (randomIndex == LastPrefab)
+		{
+			randomIndex = Random.Range(0, Prefabs.Length);
+		}
+
+		LastPrefab = randomIndex;
+		return randomIndex;
+	}
+
+	#endregion
 }
