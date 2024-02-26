@@ -4,36 +4,51 @@ using UnityEngine;
 
 public class CoinTake : MonoBehaviour
 {
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player") && gameObject.CompareTag("Heart"))
+        if(other.CompareTag("Player"))
         {
-            GameManager.Instance.heartCoin++;
-            Debug.Log("Take Heart");
-            Debug.Log(GameManager.Instance.heartCoin);
-            gameObject.SetActive(false);
+            if (gameObject.CompareTag("Heart") && GameManager.Instance.diamondCoinHexa >= GameManager.Instance.heartCoin && GameManager.Instance.diamondCoin >= GameManager.Instance.heartCoin && GameManager.Instance.starCoin >= GameManager.Instance.heartCoin)
+            {
+                GameManager.Instance.heartCoin++;
+                GameManager.Instance.uiManager.CoinTextUpdate();
+                gameObject.SetActive(false);
+            }
+            else if (gameObject.CompareTag("5Diamond") && GameManager.Instance.heartCoin >= GameManager.Instance.diamondCoinHexa && GameManager.Instance.diamondCoin >= GameManager.Instance.diamondCoinHexa && GameManager.Instance.starCoin >= GameManager.Instance.diamondCoinHexa)
+            {
+                GameManager.Instance.diamondCoinHexa++;
+                GameManager.Instance.uiManager.CoinTextUpdate();
+                gameObject.SetActive(false);
+
+            }
+            else if ( gameObject.CompareTag("Diamond") && GameManager.Instance.heartCoin >= GameManager.Instance.diamondCoin && GameManager.Instance.diamondCoinHexa >= GameManager.Instance.diamondCoin && GameManager.Instance.starCoin >= GameManager.Instance.diamondCoin)
+            {
+                GameManager.Instance.diamondCoin++;
+                GameManager.Instance.uiManager.CoinTextUpdate();
+                gameObject.SetActive(false);
+
+            }
+            else if (gameObject.CompareTag("Star") && GameManager.Instance.heartCoin >= GameManager.Instance.starCoin && GameManager.Instance.diamondCoin >= GameManager.Instance.starCoin && GameManager.Instance.diamondCoinHexa >= GameManager.Instance.starCoin)
+            {
+                GameManager.Instance.starCoin++;
+                GameManager.Instance.uiManager.CoinTextUpdate();
+                gameObject.SetActive(false);
+            }
+            else
+            {
+                GameManager.Instance.starCoin--;
+                GameManager.Instance.heartCoin--;
+                GameManager.Instance.diamondCoinHexa--;
+                GameManager.Instance.diamondCoin--;
+                Debug.Log("Else durumu gerçekleþti");
+                GameManager.Instance.uiManager.CoinTextUpdate();
+                gameObject.SetActive(false);
+            }
         }
-        else if (other.CompareTag("Player") && gameObject.CompareTag("5Diamond"))
-        {
-            GameManager.Instance.diamondCoinHexa++;
-            Debug.Log("Take 5Diamond");
-            Debug.Log(GameManager.Instance.diamondCoinHexa);
-            gameObject.SetActive(false);
-        }
-        else if (other.CompareTag("Player") && gameObject.CompareTag("Diamond"))
-        {
-            Debug.Log("Take Diamond");
-            GameManager.Instance.diamondCoin++;
-            Debug.Log(GameManager.Instance.diamondCoin);
-            gameObject.SetActive(false);
-        }
-        else if (other.CompareTag("Player") && gameObject.CompareTag("Star"))
-        {
-            Debug.Log("Take Star");
-            GameManager.Instance.starCoin++;
-            Debug.Log(GameManager.Instance.starCoin);
-            gameObject.SetActive(false);
-        }
+
+        
+            
     }
 
 

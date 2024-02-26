@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     [Header("Game Start")]
     public int GameStartGroundSpawn;
 
+    [Header("Scripts")]
+    public UIManager uiManager;
+
     private void Awake()
     {
         if (_instance == null)
@@ -38,5 +41,6 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        uiManager.CoinTextUpdate();
     }
 }

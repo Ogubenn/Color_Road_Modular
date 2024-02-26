@@ -3,7 +3,7 @@ using UnityEngine;
 public class CoinRotation : MonoBehaviour
 {
     public float rotationSpeed = 50f; // Dönme hýzý
-    public float movementDistance = 1f; // Hareket mesafesi
+    public float movementDistance = 0.2f; // Hareket mesafesi
     public float movementSpeed = 1f; // Hareket hýzý
 
     private Vector3 startPosition;

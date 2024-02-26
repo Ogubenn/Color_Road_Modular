@@ -5,31 +5,32 @@ using UnityEngine;
 public class GroundMaker : MonoBehaviour
 {
 
-	public GameObject[] Prefabs; // Farkli ground varyasyonları
+	public GameObject[] Prefabs; 
 	private Transform Player;
 
-	private List<GameObject> ActivePrefabs; //Ground List
+	private List<GameObject> ActivePrefabs; 
 
 
-	public float BackArea = 200.0f; //Tile oyuncunun gerisinde kac birim oldugunu belirtir.alan.Alan geçilince tile silinir ve yeni tile ürer.
-	public int PrefabsOnScreen = 4; //Ekrandaki max ground
-	public int LastPrefab = 0; //Son uretilen yol parcasinin prefabs dizisindeki index deðerini tutar.
-	public float SpawnPrefab = -100.0f; //Groundun üretileceği koordinat
-	public float PrefabLength = 99.0f; //Ground Uzunlugu
+	public float BackArea = 200.0f; 
+	public int PrefabsOnScreen = 8; 
+	public int LastPrefab = 0; 
+	public float SpawnPrefab = -100.0f; 
+	public float PrefabLength = 99.0f;
 
 
 	private void Start()
 	{
-		ActivePrefabs = new List<GameObject>();
-		Player = GameObject.FindGameObjectWithTag("Player").transform;
+			ActivePrefabs = new List<GameObject>();
+			Player = GameObject.FindGameObjectWithTag("Player").transform;
 
-		for (int i = 0; i < PrefabsOnScreen; i++)
-		{
-			if (i < 4)
-				Spawn(0);
-			else
-				Spawn();
-		}
+			for (int i = 0; i < PrefabsOnScreen; i++)
+			{
+				if (i < 4)
+					Spawn(0);
+				else
+					Spawn();
+			}
+		
 	}
 
 

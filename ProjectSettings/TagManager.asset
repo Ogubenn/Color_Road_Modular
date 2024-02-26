@@ -13,6 +13,10 @@ TagManager:
   - Money
   - MoneyNumber
   - RoadSpawn
+  - BrickDiamond
+  - BrickHexa
+  - BrickHeart
+  - BrickStar
   layers:
   - Default
   - TransparentFX

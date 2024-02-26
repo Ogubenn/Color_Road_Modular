@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5120183531672501271}
   - component: {fileID: 9211001856716052698}
   - component: {fileID: -7377080642132268025}
-  - component: {fileID: 897945935774135922}
+  - component: {fileID: -239436495051414853}
   m_Layer: 0
   m_Name: HardStar
   m_TagString: Star
@@ -29,8 +29,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5120183531670495959}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,9 +112,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotationSpeed: 50
-  movementDistance: 0.3
+  movementDistance: 0.1
   movementSpeed: 5
---- !u!114 &897945935774135922
+--- !u!114 &-239436495051414853
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
