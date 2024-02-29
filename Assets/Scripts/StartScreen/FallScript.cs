@@ -2,26 +2,26 @@ using UnityEngine;
 
 public class FallScript : MonoBehaviour
 {
-    public GameObject objePrefab; // Býrakýlacak obje
-    public Transform dusmeNoktasi; // Düþürme noktasý
-    private Rigidbody objeRigidbody; // Býrakýlacak objenin Rigidbody bileþeni
+    public GameObject objePrefab; 
+    public Transform dusmeNoktasi; 
+    private Rigidbody objeRigidbody; 
     public GameObject ground;
 
     void Start()
     {
-        objeRigidbody = objePrefab.GetComponent<Rigidbody>(); // Objeye ait Rigidbody bileþenini al
-        InvokeRepeating("InstantiateVeBirak", 0f, 10f); // Belirli aralýklarla InstantiateVeBirak fonksiyonunu çaðýr
+        objeRigidbody = objePrefab.GetComponent<Rigidbody>(); 
+        InvokeRepeating("InstantiateVeBirak", 0f, 10f); 
     }
 
     void InstantiateVeBirak()
     {
-        GameObject yeniObje = Instantiate(objePrefab, dusmeNoktasi.position, Quaternion.identity); // Yeni bir obje instantiate et
-        yeniObje.SetActive(true); // Objeyi aktifleþtir
-        objeRigidbody = yeniObje.GetComponent<Rigidbody>(); // Yeni objenin Rigidbody bileþenini al
+        GameObject yeniObje = Instantiate(objePrefab, dusmeNoktasi.position, Quaternion.identity); 
+        yeniObje.SetActive(true); 
+        objeRigidbody = yeniObje.GetComponent<Rigidbody>();
 
-        // Yeni objeyi býrakma iþlemi
-        objeRigidbody.isKinematic = false; // Kinematik olmayan bir rigidbody'e sahip olmasý için ayarla
-        objeRigidbody.velocity = Vector3.zero; // Hýzýný sýfýrla
-        objeRigidbody.angularVelocity = Vector3.zero; // Açýsal hýzýný sýfýrla
+        
+        objeRigidbody.isKinematic = false; 
+        objeRigidbody.velocity = Vector3.zero; 
+        objeRigidbody.angularVelocity = Vector3.zero; 
     }
 }

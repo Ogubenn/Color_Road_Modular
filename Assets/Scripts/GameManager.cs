@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
     [Header("Scripts")]
     public UIManager uiManager;
 
+    public long VibrationPower1;
+    public long VibrationPower2;
+
     private void Awake()
     {
         if (_instance == null)

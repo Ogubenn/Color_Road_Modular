@@ -15,26 +15,24 @@ public class BrickManager : MonoBehaviour
             {
                 GameManager.Instance.starCoin -= BrickNumberTMP;
                 GameManager.Instance.uiManager.CoinTextUpdate();
-                Debug.Log("Kýrýldý");
             }
             else if(gameObject.CompareTag("BrickHexa"))
             {
                 GameManager.Instance.diamondCoinHexa -= BrickNumberTMP;
                 GameManager.Instance.uiManager.CoinTextUpdate();
-                Debug.Log("Kýrýldý");
             }
             else if(gameObject.CompareTag("BrickDiamond"))
             {
                 GameManager.Instance.diamondCoin -= BrickNumberTMP;
                 GameManager.Instance.uiManager.CoinTextUpdate();
-                Debug.Log("Kýrýldý");
             }
             else if(gameObject.CompareTag("BrickHeart"))
             {
                 GameManager.Instance.heartCoin -= BrickNumberTMP;
                 GameManager.Instance.uiManager.CoinTextUpdate();
-                Debug.Log("Kýrýldý");
             }
+            Vibration.VibrateCall(GameManager.Instance.VibrationPower1);
+            Debug.Log("Kýrýldý");
         }
     }
 
