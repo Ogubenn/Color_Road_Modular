@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
             if (_instance == null)
             {
                 _instance = FindObjectOfType<GameManager>();
-
                 if (_instance == null)
                 {
                     GameObject singletonObject = new GameObject("GameManagerSingleton");
@@ -22,7 +21,7 @@ public class GameManager : MonoBehaviour
     }
     public int firstTouch = 0;
 
-    [Header("Coins")]
+    [Header("Coins")]  
     public int heartCoin;
     public int starCoin;
     public int diamondCoinHexa;
