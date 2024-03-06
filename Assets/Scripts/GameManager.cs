@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Intance
     private static GameManager _instance;
     public static GameManager Instance
     {
@@ -19,6 +20,10 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
+
+    #endregion
+
+    #region veriables
     public int firstTouch = 0;
 
     [Header("Coins")]  
@@ -35,6 +40,10 @@ public class GameManager : MonoBehaviour
 
     public long VibrationPower1;
     public long VibrationPower2;
+
+    public int score;
+    #endregion
+
 
     private void Awake()
     {

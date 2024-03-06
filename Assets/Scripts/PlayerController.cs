@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
                     if(!firstTouchBool)
                     {
                         GameManager.Instance.firstTouch = 1;
+                        GameManager.Instance.uiManager.FirstTouchUý();
                         firstTouchBool = true;
                     }
                 }
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
             else if(touch.phase == TouchPhase.Moved)
             {
+                GameManager.Instance.uiManager.ScoreÝncrease();
                 if (!eventSystem.IsPointerOverGameObject(touch.fingerId))
                 {
                     rb.velocity = new Vector3(touch.deltaPosition.x * touchSpeed * Time.deltaTime,
