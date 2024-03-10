@@ -2718,7 +2718,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7412952032177689837}
-  m_LocalRotation: {x: -0, y: -0, z: 0.30702475, w: 0.9517016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.7333374}
   m_LocalScale: {x: 0.33222142, y: 0.33119607, z: 3.3333333}
   m_ConstrainProportionsScale: 0
@@ -2728,7 +2728,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 3.3353033, y: 1.9433863}
+  m_AnchoredPosition: {x: 3.89, y: -0.34}
   m_SizeDelta: {x: 20, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &7412952032177689832
@@ -2877,7 +2877,6 @@ GameObject:
   - component: {fileID: 7412952033025042495}
   - component: {fileID: 7412952033025042494}
   - component: {fileID: 7412952033025042433}
-  - component: {fileID: 7412952033025042492}
   m_Layer: 0
   m_Name: Money
   m_TagString: Money
@@ -2892,7 +2891,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7412952033025042435}
-  m_LocalRotation: {x: -0, y: -0, z: -0.30702475, w: 0.9517016}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.54, y: 1.58, z: -0.29999924}
   m_LocalScale: {x: 3, y: 3.0293999, z: 0.3}
   m_ConstrainProportionsScale: 0
@@ -2900,7 +2899,7 @@ Transform:
   - {fileID: 7412952032177689834}
   m_Father: {fileID: 6834226534162364602}
   m_RootOrder: 25
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -35.76}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7412952033025042495
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2962,20 +2961,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7412952033025042492
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7412952033025042435}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf680626b1306d48929327091588e8d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Size: {x: 2.0579395, y: 1.0452915, z: 1}
+  m_Center: {x: 0.52896905, y: 0.022645595, z: 0}
 --- !u!1 &7480572893066210446
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
         {
             float creaseAmount = decreaseRate * Time.deltaTime;
             camerashakeScript.CameraShakesCall();
-            Vibration.VibrateCall(3000);
+            Vibration.VibrateCall(100);
             uiManager.StartCoroutine("WhiteEffect");
             Time.timeScale = 0.4f;
             playerControllerScript.ballForwordSpeed = 0;

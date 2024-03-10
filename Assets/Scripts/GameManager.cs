@@ -37,11 +37,14 @@ public class GameManager : MonoBehaviour
 
     [Header("Scripts")]
     public UIManager uiManager;
+    public PlayerController playerController;
+
+    [Header("Score")]
+    public int currentLevel = 1;
+    public float levelUzunlugu = 100f;
 
     public long VibrationPower1;
     public long VibrationPower2;
-
-    public int score;
     #endregion
 
 

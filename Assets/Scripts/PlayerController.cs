@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
 
             else if(touch.phase == TouchPhase.Moved)
             {
-                GameManager.Instance.uiManager.Score›ncrease();
+                
                 if (!eventSystem.IsPointerOverGameObject(touch.fingerId))
                 {
                     rb.velocity = new Vector3(touch.deltaPosition.x * touchSpeed * Time.deltaTime,

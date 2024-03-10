@@ -19,11 +19,13 @@ public class UIManager : MonoBehaviour
     public GameObject HeartCoinObject;
     public GameObject topToMove;
     public GameObject FirstTouchhand;
-    public GameObject LevelText;
+    public GameObject LevelTextParents;
 
     [Header("Score Object")]
     public TextMeshProUGUI ScoreText;
     public Vector3 FirstPlayerPos;
+    float toplamMesafe = 0f;
+    public TextMeshProUGUI levelText;
 
     public GameObject Player;
     
@@ -38,6 +40,18 @@ public class UIManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("Vibration"))
         {
             PlayerPrefs.SetInt("Vibration", 1);
+        } 
+    }
+
+    private void Update()
+    {
+        toplamMesafe += GameManager.Instance.playerController.ballForwordSpeed * Time.deltaTime;
+        if (toplamMesafe >= GameManager.Instance.levelUzunlugu)
+        {
+            GameManager.Instance.currentLevel++;
+            levelText.text = GameManager.Instance.currentLevel.ToString();
+
+            toplamMesafe = 0f;
         }
     }
 
@@ -55,28 +69,7 @@ public class UIManager : MonoBehaviour
         HeartCoin.text = GameManager.Instance.heartCoin.ToString();
     }
 
-    public void ScoreTextUpdate()
-    {
-        if(!ScoreText)
-        {
-            Debug.Log("Score Text Hatalý");
-        }
-        ScoreText.text = GameManager.Instance.score.ToString();
-    }
     #endregion
-
-
-    public void ScoreÝncrease()
-    {
-        int farkSayisi = 0;
-        while(Mathf.Abs(Player.transform.position.z - FirstPlayerPos.z) >= farkSayisi)
-        {
-            farkSayisi += 500;
-            GameManager.Instance.score++;
-            ScoreTextUpdate();
-        }
-        farkSayisi++;
-    }
 
     public void  FirstTouchUý()
     {
@@ -89,7 +82,7 @@ public class UIManager : MonoBehaviour
         HexacoinObject.SetActive(true);
         topToMove.SetActive(false);
         FirstTouchhand.SetActive(false);
-        LevelText.SetActive(true);
+        LevelTextParents.SetActive(true);
     }
 
     #region White Effect Damage
