@@ -2292,7 +2292,7 @@ GameObject:
   - component: {fileID: 7068934612540219726}
   m_Layer: 0
   m_Name: Brick
-  m_TagString: BrickStar
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2879,7 +2879,7 @@ GameObject:
   - component: {fileID: 7412952033025042433}
   m_Layer: 0
   m_Name: Money
-  m_TagString: Money
+  m_TagString: BrickDiamond
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2892,7 +2892,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7412952033025042435}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.54, y: 1.58, z: -0.29999924}
+  m_LocalPosition: {x: -1.54, y: 1.58, z: -0.42}
   m_LocalScale: {x: 3, y: 3.0293999, z: 0.3}
   m_ConstrainProportionsScale: 0
   m_Children:

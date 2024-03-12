@@ -1724,7 +1724,7 @@ GameObject:
   - component: {fileID: 4691736155820988247}
   m_Layer: 0
   m_Name: Money
-  m_TagString: Money
+  m_TagString: BrickDiamond
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2904,7 +2904,7 @@ GameObject:
   - component: {fileID: -784704377668222039}
   m_Layer: 0
   m_Name: Brick 2
-  m_TagString: BrickHexa
+  m_TagString: Brick
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

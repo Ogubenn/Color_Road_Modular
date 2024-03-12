@@ -374,8 +374,7 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Brick
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -4927546382805710386, guid: a4d8f612a022067439714fac6ef7e927, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4d8f612a022067439714fac6ef7e927, type: 3}
 --- !u!4 &889162178444849749 stripped
 Transform:

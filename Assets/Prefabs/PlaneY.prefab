@@ -31,7 +31,7 @@ Transform:
   m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5350634070923430519}
+  - {fileID: 4760657677826627899}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -99,25 +99,13 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &3703423650852179355
+--- !u!1001 &4266370689465507543
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 761010205958505309}
     m_Modifications:
-    - target: {fileID: 4691736155820988245, guid: 50e3242cb0b262b499420098ae4756fa, type: 3}
-      propertyPath: m_TagString
-      value: BrickHexa
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691736155820988247, guid: 50e3242cb0b262b499420098ae4756fa, type: 3}
-      propertyPath: m_Size.x
-      value: 2.0620737
-      objectReference: {fileID: 0}
-    - target: {fileID: 4691736155820988247, guid: 50e3242cb0b262b499420098ae4756fa, type: 3}
-      propertyPath: m_Center.x
-      value: -0.53103656
-      objectReference: {fileID: 0}
     - target: {fileID: 8245987333625421142, guid: 50e3242cb0b262b499420098ae4756fa, type: 3}
       propertyPath: m_Name
       value: Brick 2
@@ -170,29 +158,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -784704377668222039, guid: 50e3242cb0b262b499420098ae4756fa, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50e3242cb0b262b499420098ae4756fa, type: 3}
---- !u!4 &5350634070923430519 stripped
+--- !u!4 &4760657677826627899 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8729226664571914220, guid: 50e3242cb0b262b499420098ae4756fa, type: 3}
-  m_PrefabInstance: {fileID: 3703423650852179355}
+  m_PrefabInstance: {fileID: 4266370689465507543}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8248713379015957198 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4691736155820988245, guid: 50e3242cb0b262b499420098ae4756fa, type: 3}
-  m_PrefabInstance: {fileID: 3703423650852179355}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1183536055938085415
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8248713379015957198}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac0182f790cd45d4c9cdcda6a3bf3bdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  BrickNumberTMP: 20
